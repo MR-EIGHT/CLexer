@@ -1,8 +1,9 @@
-#include <stdio.h>
-
 int main(){
 int number = 0;
-scnaf("%d", &number);
+number++;
+number+=1;
+number = 1+2;
+scanf("%d", &number);
 
 printf("%d",number);
 
