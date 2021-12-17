@@ -1,4 +1,5 @@
 from Token import Token
+import pandas as pd
 
 Tokens = []
 keywords = ['typedef', 'extern', 'static', 'auto', 'register', 'void', 'char', 'short', 'int', 'long', 'float',
@@ -315,5 +316,8 @@ while index < len(code) - 1:
         case _:
             raise Exception('Error! Unknown character is used at row:{} and column:{}'.format(row, col))
 
-for t in Tokens:
-    print(t)
+output = pd.DataFrame(
+    {"Type": [x.Type for x in Tokens], "Literal": [x.Literal for x in Tokens], "Row": [x.Row for x in Tokens],
+     "Col": [x.Col for x in Tokens], "Block No.": [x.BlockNo for x in Tokens], })
+
+output.to_csv("output.csv")
