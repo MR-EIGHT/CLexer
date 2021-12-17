@@ -238,10 +238,13 @@ while index < len(code) - 1:
 
         case current_char if current_char.isnumeric():
             c_index = index
-            while code[index].isnumeric():
+            while code[index].isnumeric() or (code[index] == '.' and code[index + 1].isnumeric()):
                 index += 1
                 col += 1
-            add_token('number', code[c_index:index], col, row, block_no)
+            if '.' in code[c_index:index]:
+                add_token('float', code[c_index:index], col, row, block_no)
+            else:
+                add_token('integer', code[c_index:index], col, row, block_no)
             index -= 1
 
         case '"':
@@ -297,7 +300,7 @@ while index < len(code) - 1:
                 col += 1
                 add_token('relational operator', code[index], col, row, block_no)
 
-        case current_char if code[index].isalnum() or code[index] == '_':
+        case current_char if code[index].isalpha() or code[index] == '_':
             c_index = index
             while code[index].isalnum() or code[index] == '_':
                 index += 1

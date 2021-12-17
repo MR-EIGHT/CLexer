@@ -8,6 +8,7 @@ int main(){
 char a = 'c';
 int number = 0;
 int _no <<= 0;
+float p3 = 2.55896;
 number++;
 number+=1253;
 number = 1+2;
