@@ -85,6 +85,41 @@ while index < len(code) - 1:
                 col += 1
                 add_token('operator', code[index], col, row, block_no)
 
+        case '|':
+            if code[index + 1] == '=':
+                col += 2
+                add_token('bit-wise operator', code[index:index + 2], col, row, block_no)
+
+            elif code[index + 1] == '|':
+                col += 2
+                add_token('boolean operator', code[index:index + 2], col, row, block_no)
+
+            else:
+                col += 1
+                add_token('operator', code[index], col, row, block_no)
+
+        case '&':
+            if code[index + 1] == '=':
+                col += 2
+                add_token('operator', code[index:index + 2], col, row, block_no)
+
+            elif code[index + 1] == '&':
+                col += 2
+                add_token('boolean operator', code[index:index + 2], col, row, block_no)
+
+            else:
+                col += 1
+                add_token('ampersand', code[index], col, row, block_no)
+
+        case '^':
+            if code[index + 1] == '=':
+                col += 2
+                add_token('operator', code[index:index + 2], col, row, block_no)
+
+            else:
+                col += 1
+                add_token('xor', code[index], col, row, block_no)
+
         case '{':
             col += 1
             block_no += 1
@@ -97,6 +132,35 @@ while index < len(code) - 1:
 
         case '#':
             continue
+
+        case '~':
+            col += 1
+            add_token('tilda', code[index], col, row, block_no)
+
+        case '?':
+            col += 1
+            add_token('question', code[index], col, row, block_no)
+
+        case ':':
+            col += 1
+            add_token('colon', code[index], col, row, block_no)
+
+        case '.':
+            col += 1
+            add_token('colon', code[index], col, row, block_no)
+
+        case '[':
+            col += 1
+            add_token('left bracket', code[index], col, row, block_no)
+
+        case ':':
+            col += 1
+            add_token('right bracket', code[index], col, row, block_no)
+
+        case "'":
+            col += 3
+            add_token('right bracket', code[index:index + 3], col, row, block_no)
+            index += 3
 
         case '(':
             col += 1
@@ -138,19 +202,6 @@ while index < len(code) - 1:
         case ',':
             col += 1
             add_token('comma', code[index], col, row, block_no)
-
-        case '&':
-            if code[index + 1] == '=':
-                col += 2
-                add_token('operator', code[index:index + 2], col, row, block_no)
-
-            elif code[index + 1] == '&':
-                col += 2
-                add_token('boolean operator', code[index:index + 2], col, row, block_no)
-
-            else:
-                col += 1
-                add_token('ampersand', code[index], col, row, block_no)
 
         case _:
             c_index = index

@@ -5,6 +5,7 @@ by mehrdad
 */
 
 int main(){
+char a = 'c';
 int number = 0;
 number++;
 number+=1;
