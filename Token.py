@@ -5,7 +5,7 @@ class Token:
     Col = None
     BlockNo = None
 
-    def __init__(self, Type, literal, row, col, blockno):
+    def __init__(self, Type, literal, col, row, blockno):
         self.Type = Type
         self.Literal = literal
         self.Row = row

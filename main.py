@@ -1,11 +1,14 @@
 from Token import Token
 
 Tokens = []
-keywords = ['int', 'char', 'printf', 'scanf', 'if', 'else', 'return']
+keywords = ['typedef', 'extern', 'static', 'auto', 'register', 'void', 'char', 'short', 'int', 'long', 'float',
+            'double', 'signed', 'unsigned', 'goto', 'continue', 'break', 'return', 'case', 'default', 'switch',
+            'struct', 'union', 'enum', 'while', 'do', 'for', 'const', 'volatile', 'if', 'else', 'sizeof'
+            ]
 
 
-def add_token(Type, literal, col, row, blockno):
-    Tokens.append(Token(Type, literal, row, col, blockno))
+def add_token(token_typeype, token_literal, token_column, token_row, token_block):
+    Tokens.append(Token(token_typeype, token_literal, token_column, token_row, token_block))
 
 
 code = open("hello.c", mode='r').read()
