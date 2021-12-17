@@ -273,9 +273,9 @@ while index < len(code) - 1:
                 col += 1
                 add_token('relational operator', code[index], col, row, block_no)
 
-        case current_char if code[index].isalnum():
+        case current_char if code[index].isalnum() or code[index] == '_':
             c_index = index
-            while code[index].isalnum():
+            while code[index].isalnum() or code[index] == '_':
                 index += 1
                 col += 1
 
