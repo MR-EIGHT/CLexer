@@ -137,7 +137,7 @@ while index < len(code) - 1:
         case '&':
             if code[index + 1] == '=':
                 col += 2
-                add_token('operator', code[index:index + 2], col, row, block_no)
+                add_token('bit-and assign', code[index:index + 2], col, row, block_no)
                 index += 1
 
             elif code[index + 1] == '&':
@@ -152,7 +152,7 @@ while index < len(code) - 1:
         case '^':
             if code[index + 1] == '=':
                 col += 2
-                add_token('operator', code[index:index + 2], col, row, block_no)
+                add_token('xor assign', code[index:index + 2], col, row, block_no)
                 index += 1
 
             else:
@@ -173,8 +173,13 @@ while index < len(code) - 1:
             continue
 
         case '~':
-            col += 1
-            add_token('tilda', code[index], col, row, block_no)
+            if code[index + 1] == '=':
+                col += 2
+                add_token('bit-not assign', code[index:index + 2], col, row, block_no)
+                index += 1
+            else:
+                col += 1
+                add_token('tilda', code[index], col, row, block_no)
 
         case '?':
             col += 1
@@ -185,8 +190,13 @@ while index < len(code) - 1:
             add_token('colon', code[index], col, row, block_no)
 
         case '.':
-            col += 1
-            add_token('colon', code[index], col, row, block_no)
+            if code[index: index + 3] == '...':
+                col += 3
+                add_token('ellipsis', code[index:index + 3], col, row, block_no)
+                index += 2
+            else:
+                col += 1
+                add_token('colon', code[index], col, row, block_no)
 
         case '[':
             col += 1
@@ -248,7 +258,11 @@ while index < len(code) - 1:
             add_token('comma', code[index], col, row, block_no)
 
         case '<':
-            if code[index + 1] == '<':
+            if code[index: index + 3] == '<<=':
+                col += 3
+                add_token('left-shift assign', code[index:index + 3], col, row, block_no)
+                index += 2
+            elif code[index + 1] == '<':
                 col += 2
                 add_token('left shift', code[index:index + 2], col, row, block_no)
                 index += 1
@@ -258,12 +272,19 @@ while index < len(code) - 1:
                 add_token('relational operator', code[index:index + 2], col, row, block_no)
                 index += 1
 
+
+
             else:
                 col += 1
                 add_token('relational operator', code[index], col, row, block_no)
 
         case '>':
-            if code[index + 1] == '>':
+            if code[index: index + 3] == '>>=':
+                col += 3
+                add_token('right-shift assign', code[index:index + 3], col, row, block_no)
+                index += 2
+
+            elif code[index + 1] == '>':
                 col += 2
                 add_token('right shift', code[index:index + 2], col, row, block_no)
                 index += 1
