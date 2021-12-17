@@ -14,5 +14,5 @@ scanf("%d", &number);
 
 printf("%d",number);
 
-
+printf('q');
 }

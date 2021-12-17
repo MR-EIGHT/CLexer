@@ -56,6 +56,11 @@ while index < len(code) - 1:
                 add_token('operator', code[index:index + 2], col, row, block_no)
                 index += 1
 
+            elif code[index + 1] == '>':
+                col += 2
+                add_token('arrow', code[index:index + 2], col, row, block_no)
+                index += 1
+
             else:
                 col += 1
                 add_token('operator', code[index], col, row, block_no)
@@ -281,7 +286,7 @@ while index < len(code) - 1:
             index -= 1
 
         case _:
-            raise Exception('Error! Unknown character is used at row:{} and column:{}'.format(row,col))
+            raise Exception('Error! Unknown character is used at row:{} and column:{}'.format(row, col))
 
 for t in Tokens:
     print(t)
