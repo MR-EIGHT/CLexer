@@ -8,8 +8,8 @@ keywords = ['typedef', 'extern', 'static', 'auto', 'register', 'void', 'char', '
             ]
 
 
-def add_token(token_typeype, token_literal, token_column, token_row, token_block):
-    Tokens.append(Token(token_typeype, token_literal, token_column, token_row, token_block))
+def add_token(token_type, token_literal, token_column, token_row, token_block):
+    Tokens.append(Token(token_type, token_literal, token_column, token_row, token_block))
 
 
 code = open("hello.c", mode='r').read()
@@ -163,12 +163,12 @@ while index < len(code) - 1:
         case '{':
             col += 1
             block_no += 1
-            add_token('left calibrace', code[index], col, row, block_no)
+            add_token('left curly-brace', code[index], col, row, block_no)
 
         case '}':
             col += 1
             block_no -= 1
-            add_token('right calibrace', code[index], col, row, block_no)
+            add_token('right curly-brace', code[index], col, row, block_no)
 
         case '#':
             continue
@@ -218,11 +218,11 @@ while index < len(code) - 1:
 
         case '(':
             col += 1
-            add_token('left parantheses', code[index], col, row, block_no)
+            add_token('left parentheses', code[index], col, row, block_no)
 
         case ')':
             col += 1
-            add_token('right parantheses', code[index], col, row, block_no)
+            add_token('right parentheses', code[index], col, row, block_no)
 
         case ';':
             col += 1
@@ -275,8 +275,6 @@ while index < len(code) - 1:
                 col += 2
                 add_token('relational operator', code[index:index + 2], col, row, block_no)
                 index += 1
-
-
 
             else:
                 col += 1
