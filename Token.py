@@ -5,12 +5,12 @@ class Token:
     Col = None
     BlockNo = None
 
-    def __init__(self, Type, literal, col, row, blockno):
-        self.Type = Type
+    def __init__(self, token_type, literal, col, row, block_no):
+        self.Type = token_type
         self.Literal = literal
         self.Row = row
         self.Col = col
-        self.BlockNo = blockno
+        self.BlockNo = block_no
 
     def __repr__(self):
         return "Type: {}   Literal: {}   Row: {}   Column: {}   Block-Number: {}".format(self.Type, self.Literal,
