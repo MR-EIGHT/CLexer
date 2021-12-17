@@ -1,7 +1,7 @@
 from Token import Token
 
 Tokens = []
-keywords = ['int', 'char', 'printf', 'scanf']
+keywords = ['int', 'char', 'printf', 'scanf', 'if', 'else', 'return']
 
 
 def add_token(Type, literal, col, row, blockno):
@@ -15,7 +15,7 @@ row = 0
 block_no = 0
 index = -1
 
-while index < len(code)-1:
+while index < len(code) - 1:
     index += 1
     current_char = code[index]
     if current_char.isspace():
@@ -43,26 +43,68 @@ while index < len(code)-1:
                 col += 1
                 add_token('operator', code[index], col, row, block_no)
 
+        case '-':
+            if code[index + 1] == '=':
+                col += 2
+                add_token('operator', code[index:index + 2], col, row, block_no)
+
+            elif code[index + 1] == '-':
+                col += 2
+                add_token('operator', code[index:index + 2], col, row, block_no)
+
+            else:
+                col += 1
+                add_token('operator', code[index], col, row, block_no)
+
+        case '*':
+            if code[index + 1] == '=':
+                col += 2
+                add_token('operator', code[index:index + 2], col, row, block_no)
+
+            else:
+                col += 1
+                add_token('asterisk', code[index], col, row, block_no)
+
+        case '/':
+            if code[index + 1] == '=':
+                col += 2
+                add_token('operator', code[index:index + 2], col, row, block_no)
+
+            elif code[index + 1] == '/':
+                while code[index] != '\n':
+                    index += 1
+                row += 1
+
+            elif code[index + 1] == '*':
+                while code[index:index + 2] != '*/':
+                    index += 1
+                    if code[index] == '\n':
+                        row += 1
+                index += 1
+            else:
+                col += 1
+                add_token('operator', code[index], col, row, block_no)
+
         case '{':
             col += 1
             block_no += 1
-            add_token('operator', code[index], col, row, block_no)
+            add_token('left calibrace', code[index], col, row, block_no)
 
         case '}':
             col += 1
             block_no -= 1
-            add_token('operator', code[index], col, row, block_no)
+            add_token('right calibrace', code[index], col, row, block_no)
 
         case '#':
             continue
 
         case '(':
             col += 1
-            add_token('operator', code[index], col, row, block_no)
+            add_token('left parantheses', code[index], col, row, block_no)
 
         case ')':
             col += 1
-            add_token('operator', code[index], col, row, block_no)
+            add_token('right parantheses', code[index], col, row, block_no)
 
         case ';':
             col += 1
@@ -122,4 +164,5 @@ while index < len(code)-1:
                 add_token('identifier', code[c_index:index], col, row, block_no)
             index -= 1
 
-print("hi")
+for t in Tokens:
+    print(t)

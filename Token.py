@@ -13,5 +13,6 @@ class Token:
         self.BlockNo = blockno
 
     def __repr__(self):
-        return "Type: {}, Literal: {}, Row: {}, Column: {}, Block-Number: {}".format(self.Type, self.Literal, self.Row,
-                                                                                     self.Col, self.BlockNo)
+        return "Type: {}   Literal: {}   Row: {}   Column: {}   Block-Number: {}".format(self.Type, self.Literal,
+                                                                                         self.Row,
+                                                                                         self.Col, self.BlockNo)

@@ -1,3 +1,9 @@
+// this is a test
+/*
+this project is made for compiler design class
+by mehrdad
+*/
+
 int main(){
 int number = 0;
 number++;
