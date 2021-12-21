@@ -315,7 +315,7 @@ while index < len(code) - 1:
             raise Exception('Error! Unknown character is used at row:{} and column:{}'.format(row, col))
 
 output = pd.DataFrame(
-    {"Type": [x.Type for x in Tokens], "Literal": [x.Literal for x in Tokens], "Row": [x.Row for x in Tokens],
+    {"Type": [x.Type for x in Tokens], "Literal": [str(x.Literal) for x in Tokens], "Row": [x.Row for x in Tokens],
      "Col": [x.Col for x in Tokens], "Block No.": [x.BlockNo for x in Tokens], })
 
 output.to_csv("output.csv")
