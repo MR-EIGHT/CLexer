@@ -34,6 +34,7 @@ while index < len(code) - 1:
         continue
 
     match current_char:
+
         case '+':
             if code[index + 1] == '=':
                 col += 2
@@ -266,7 +267,7 @@ while index < len(code) - 1:
 
         case ',':
             col += 1
-            add_token('comma', code[index], col-1, row, block_no)
+            add_token('comma', code[index], col - 1, row, block_no)
 
         case '<':
             if code[index: index + 3] == '<<=':

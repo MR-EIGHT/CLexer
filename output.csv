@@ -1,10 +1,10 @@
 ,Type,Literal,Row,Col,Block No.
-0,keyword,int,1,5,0
-1,identifier,main,1,9,0
-2,left parentheses,(,1,13,0
-3,keyword,void,1,14,0
-4,right parentheses,),1,18,0
-5,left curly-brace,{,1,20,1
+0,keyword,int,1,1,0
+1,identifier,main,1,5,0
+2,left parentheses,(,1,9,0
+3,keyword,void,1,10,0
+4,right parentheses,),1,14,0
+5,left curly-brace,{,1,16,1
 6,keyword,const,2,5,1
 7,keyword,int,2,11,1
 8,identifier,SIZE,2,15,1
@@ -32,106 +32,89 @@
 30,operator,=,5,27,1
 31,string,"""World""",5,29,1
 32,semi-colon,;,5,35,1
-33,keyword,int,7,5,1
-34,identifier,fd,7,9,1
-35,semi-colon,;,7,11,1
-36,identifier,fd,8,5,1
-37,operator,=,8,8,1
-38,identifier,shm_open,8,10,1
-39,left parentheses,(,8,18,1
-40,identifier,name,8,19,1
-41,comma,",",8,23,1
-42,identifier,O_CREAT,8,25,1
-43,operator,|,8,33,1
-44,identifier,O_RDWR,8,35,1
-45,comma,",",8,41,1
-46,integer,0666,8,43,1
-47,right parentheses,),8,47,1
-48,semi-colon,;,8,48,1
-49,identifier,a,9,5,1
-50,relational operator,>=,9,7,1
-51,integer,5,9,9,1
-52,semi-colon,;,9,10,1
-53,identifier,fd,10,5,1
-54,operator,=,10,7,1
-55,identifier,a,10,9,1
-56,operator,+,10,10,1
-57,integer,5,10,11,1
-58,semi-colon,;,10,12,1
-59,identifier,ftruncate,11,5,1
-60,left parentheses,(,11,14,1
-61,identifier,fd,11,15,1
-62,comma,",",11,17,1
-63,identifier,SIZE,11,19,1
-64,right parentheses,),11,23,1
-65,semi-colon,;,11,24,1
-66,keyword,char,12,5,1
-67,identifier,abn,12,10,1
-68,operator,=,12,14,1
-69,empty-quote,'',12,16,1
-70,semi-colon,;,12,18,1
-71,keyword,char,13,5,1
-72,identifier,f,13,10,1
-73,operator,=,13,12,1
-74,quote,'f',13,14,1
-75,keyword,char,14,5,1
-76,asterisk,*,14,10,1
-77,identifier,ptr,14,11,1
-78,operator,=,14,15,1
-79,left parentheses,(,14,17,1
-80,keyword,char,14,18,1
-81,asterisk,*,14,23,1
-82,right parentheses,),14,24,1
-83,identifier,mmap,14,26,1
-84,left parentheses,(,14,30,1
-85,integer,0,14,31,1
-86,comma,",",14,32,1
-87,identifier,SIZE,14,34,1
-88,comma,",",14,38,1
-89,identifier,PROT_READ,14,40,1
-90,operator,|,14,50,1
-91,identifier,PROT_WRITE,14,52,1
-92,comma,",",14,62,1
-93,identifier,MAP_SHARED,14,64,1
-94,comma,",",14,74,1
-95,identifier,fd,14,76,1
-96,comma,",",14,78,1
-97,integer,0,14,80,1
-98,right parentheses,),14,81,1
-99,semi-colon,;,14,82,1
-100,identifier,sprintf,16,5,1
-101,left parentheses,(,16,12,1
-102,identifier,ptr,16,13,1
-103,comma,",",16,16,1
-104,string,"""%s""",16,18,1
-105,comma,",",16,21,1
-106,identifier,message_0,16,23,1
-107,right parentheses,),16,32,1
-108,semi-colon,;,16,33,1
-109,identifier,ptr,17,5,1
-110,operator,+=,17,9,1
-111,identifier,strlen,17,12,1
-112,left parentheses,(,17,18,1
-113,identifier,message_0,17,19,1
-114,right parentheses,),17,28,1
-115,semi-colon,;,17,29,1
-116,identifier,sprintf,18,5,1
-117,left parentheses,(,18,12,1
-118,identifier,ptr,18,13,1
-119,comma,",",18,16,1
-120,string,"""%s""",18,18,1
-121,comma,",",18,21,1
-122,identifier,message_1,18,23,1
-123,right parentheses,),18,32,1
-124,semi-colon,;,18,33,1
-125,identifier,ptr,19,5,1
-126,operator,+=,19,9,1
-127,identifier,strlen,19,12,1
-128,left parentheses,(,19,18,1
-129,identifier,message_1,19,19,1
-130,right parentheses,),19,28,1
-131,semi-colon,;,19,29,1
-132,keyword,return,21,5,1
-133,identifier,EXIT_SUCCESS,21,12,1
-134,semi-colon,;,21,24,1
-135,right curly-brace,},22,1,0
+33,keyword,int,6,5,1
+34,identifier,_val,6,9,1
+35,operator,=,6,14,1
+36,integer,5,6,16,1
+37,semi-colon,;,6,17,1
+38,keyword,int,7,5,1
+39,identifier,fd,7,9,1
+40,semi-colon,;,7,11,1
+41,identifier,fd,8,5,1
+42,operator,=,8,8,1
+43,identifier,shm_open,8,10,1
+44,left parentheses,(,8,18,1
+45,identifier,name,8,19,1
+46,comma,",",8,23,1
+47,identifier,O_CREAT,8,25,1
+48,operator,|,8,33,1
+49,identifier,O_RDWR,8,35,1
+50,comma,",",8,41,1
+51,integer,0666,8,43,1
+52,right parentheses,),8,47,1
+53,semi-colon,;,8,48,1
+54,identifier,fd,9,5,1
+55,operator,=,9,7,1
+56,integer,5,9,9,1
+57,semi-colon,;,9,10,1
+58,identifier,ftruncate,10,5,1
+59,left parentheses,(,10,14,1
+60,identifier,fd,10,15,1
+61,comma,",",10,17,1
+62,identifier,SIZE,10,19,1
+63,right parentheses,),10,23,1
+64,semi-colon,;,10,24,1
+65,keyword,char,11,5,1
+66,identifier,abn,11,10,1
+67,operator,=,11,14,1
+68,empty-quote,'',11,16,1
+69,semi-colon,;,11,18,1
+70,keyword,char,12,5,1
+71,identifier,f,12,10,1
+72,operator,=,12,12,1
+73,quote,'f',12,14,1
+74,keyword,char,13,5,1
+75,asterisk,*,13,10,1
+76,identifier,ptr,13,11,1
+77,operator,=,13,15,1
+78,left parentheses,(,13,17,1
+79,keyword,char,13,18,1
+80,asterisk,*,13,23,1
+81,right parentheses,),13,24,1
+82,identifier,mmap,13,26,1
+83,left parentheses,(,13,30,1
+84,integer,0,13,31,1
+85,comma,",",13,32,1
+86,identifier,SIZE,13,34,1
+87,comma,",",13,38,1
+88,identifier,PROT_READ,13,40,1
+89,operator,|,13,50,1
+90,identifier,PROT_WRITE,13,52,1
+91,comma,",",13,62,1
+92,identifier,MAP_SHARED,13,64,1
+93,comma,",",13,74,1
+94,identifier,fd,13,76,1
+95,comma,",",13,78,1
+96,integer,0,13,80,1
+97,right parentheses,),13,81,1
+98,semi-colon,;,13,82,1
+99,identifier,sprintf,15,5,1
+100,left parentheses,(,15,12,1
+101,identifier,ptr,15,13,1
+102,comma,",",15,16,1
+103,string,"""%s""",15,18,1
+104,comma,",",15,21,1
+105,identifier,message_0,15,23,1
+106,right parentheses,),15,32,1
+107,semi-colon,;,15,33,1
+108,identifier,ptr,16,5,1
+109,operator,+=,16,9,1
+110,identifier,strlen,16,12,1
+111,left parentheses,(,16,18,1
+112,identifier,message_0,16,19,1
+113,right parentheses,),16,28,1
+114,semi-colon,;,16,29,1
+115,keyword,return,18,5,1
+116,identifier,EXIT_SUCCESS,18,12,1
+117,semi-colon,;,18,24,1
+118,right curly-brace,},19,1,0
