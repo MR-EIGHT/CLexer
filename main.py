@@ -197,7 +197,7 @@ while index < len(code) - 1:
                 index += 2
             else:
                 col += 1
-                add_token('colon', code[index], col - 1, row, block_no)
+                add_token('dot', code[index], col - 1, row, block_no)
 
         case '[':
             col += 1

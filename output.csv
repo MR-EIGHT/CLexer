@@ -40,11 +40,11 @@
 38,identifier,shm_open,8,10,1
 39,left parentheses,(,8,18,1
 40,identifier,name,8,19,1
-41,comma,",",8,24,1
+41,comma,",",8,23,1
 42,identifier,O_CREAT,8,25,1
 43,operator,|,8,33,1
 44,identifier,O_RDWR,8,35,1
-45,comma,",",8,42,1
+45,comma,",",8,41,1
 46,integer,0666,8,43,1
 47,right parentheses,),8,47,1
 48,semi-colon,;,8,48,1
@@ -61,7 +61,7 @@
 59,identifier,ftruncate,11,5,1
 60,left parentheses,(,11,14,1
 61,identifier,fd,11,15,1
-62,comma,",",11,18,1
+62,comma,",",11,17,1
 63,identifier,SIZE,11,19,1
 64,right parentheses,),11,23,1
 65,semi-colon,;,11,24,1
@@ -85,26 +85,26 @@
 83,identifier,mmap,14,26,1
 84,left parentheses,(,14,30,1
 85,integer,0,14,31,1
-86,comma,",",14,33,1
+86,comma,",",14,32,1
 87,identifier,SIZE,14,34,1
-88,comma,",",14,39,1
+88,comma,",",14,38,1
 89,identifier,PROT_READ,14,40,1
 90,operator,|,14,50,1
 91,identifier,PROT_WRITE,14,52,1
-92,comma,",",14,63,1
+92,comma,",",14,62,1
 93,identifier,MAP_SHARED,14,64,1
-94,comma,",",14,75,1
+94,comma,",",14,74,1
 95,identifier,fd,14,76,1
-96,comma,",",14,79,1
+96,comma,",",14,78,1
 97,integer,0,14,80,1
 98,right parentheses,),14,81,1
 99,semi-colon,;,14,82,1
 100,identifier,sprintf,16,5,1
 101,left parentheses,(,16,12,1
 102,identifier,ptr,16,13,1
-103,comma,",",16,17,1
+103,comma,",",16,16,1
 104,string,"""%s""",16,18,1
-105,comma,",",16,22,1
+105,comma,",",16,21,1
 106,identifier,message_0,16,23,1
 107,right parentheses,),16,32,1
 108,semi-colon,;,16,33,1
@@ -118,9 +118,9 @@
 116,identifier,sprintf,18,5,1
 117,left parentheses,(,18,12,1
 118,identifier,ptr,18,13,1
-119,comma,",",18,17,1
+119,comma,",",18,16,1
 120,string,"""%s""",18,18,1
-121,comma,",",18,22,1
+121,comma,",",18,21,1
 122,identifier,message_1,18,23,1
 123,right parentheses,),18,32,1
 124,semi-colon,;,18,33,1
