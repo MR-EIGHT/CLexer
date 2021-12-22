@@ -266,7 +266,7 @@ while index < len(code) - 1:
 
         case ',':
             col += 1
-            add_token('comma', code[index], col, row, block_no)
+            add_token('comma', code[index], col-1, row, block_no)
 
         case '<':
             if code[index: index + 3] == '<<=':
