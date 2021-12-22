@@ -12,7 +12,7 @@ def add_token(token_type, token_literal, token_column, token_row, token_block):
     Tokens.append(Token(token_type, token_literal, token_column, token_row, token_block))
 
 
-code = open("hello.c", mode='r').read()
+code = open("input-code.c", mode='r').read()
 
 col = 1
 row = 1
