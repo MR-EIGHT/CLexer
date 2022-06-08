@@ -1,3 +1,3 @@
 # CLexer
 
-A simple Lexical Analyser for C Programming Lnaguage in Python.
+A simple Lexical Analyzer for C Programming Language in Python.
